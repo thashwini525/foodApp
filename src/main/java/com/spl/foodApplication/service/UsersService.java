@@ -7,4 +7,6 @@ import org.springframework.http.ResponseEntity;
 
 public interface UsersService {
     ResponseEntity<ResponseStructure<Users>> saveUsers(UsersDto usersDto);
+    ResponseEntity<ResponseStructure<Users>> getUsersById(int userId);
+
 }
