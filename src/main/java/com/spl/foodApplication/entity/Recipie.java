@@ -22,7 +22,7 @@ public class Recipie {
         private Users user;
 
         @OneToMany
-        @JoinColumn
+        @JoinColumn(name = "recepie_id")
         private List<Ingridient> ingridient;
 
         @OneToMany(mappedBy = "recipie")
