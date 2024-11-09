@@ -3,6 +3,8 @@ package com.spl.foodApplication.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @Entity
 public class Catagory {
@@ -11,5 +13,8 @@ public class Catagory {
     @SequenceGenerator(initialValue = 1,allocationSize = 100,name = "category_id")
     private int CategoryId;
     private String CategoryName;
+    @ManyToMany
+    @JoinColumn
+    private List<Recipie> recipies;
 
 }
