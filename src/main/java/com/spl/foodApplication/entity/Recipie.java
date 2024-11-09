@@ -9,6 +9,7 @@ import java.util.List;
 @Data
 @Entity
 public class Recipie {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
         private int id;
@@ -31,5 +32,6 @@ public class Recipie {
         @JoinTable(joinColumns= @JoinColumn,inverseJoinColumns = @JoinColumn)
         private List<Catagory> catagories;
     }
+
 
 
