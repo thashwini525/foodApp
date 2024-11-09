@@ -9,6 +9,7 @@ import java.util.List;
 @Data
 @Entity
 public class Recipie {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
         private int id;
@@ -28,5 +29,6 @@ public class Recipie {
         @ManyToMany(mappedBy = "recipies")
         private List<Catagory> catagories;
     }
+
 
 
