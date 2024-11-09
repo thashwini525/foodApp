@@ -3,6 +3,8 @@ package com.spl.foodApplication.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Data
 public class Ingridient {
@@ -13,4 +15,6 @@ public class Ingridient {
     private double quantity;
     private double unit;
     private int price;
+
+
 }
