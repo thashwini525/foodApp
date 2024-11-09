@@ -17,7 +17,8 @@ public class UsersController {
     @Autowired
     private UsersService usersService;
     @PostMapping("/save")
+
     public ResponseEntity<ResponseStructure<Users>> saveUsers(@RequestBody UsersDto usersDto) {
-    return usersService.saveUsers(usersDto);
+       return usersService.saveUsers(usersDto);
     }
 }

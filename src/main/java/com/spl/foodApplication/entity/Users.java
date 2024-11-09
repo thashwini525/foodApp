@@ -1,5 +1,6 @@
 package com.spl.foodApplication.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,5 +17,6 @@ public class Users {
     private String place;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
    private List<Recipie> recipie;
 }
