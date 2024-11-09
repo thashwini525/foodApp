@@ -17,4 +17,5 @@ public class Catagory {
     @JoinColumn
     private List<Recipie> recipies;
 
+
 }
