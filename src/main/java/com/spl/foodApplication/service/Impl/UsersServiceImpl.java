@@ -5,6 +5,8 @@ import com.spl.foodApplication.dto.ResponseStructure;
 import com.spl.foodApplication.dto.UsersDto;
 import com.spl.foodApplication.entity.Users;
 import com.spl.foodApplication.service.UsersService;
+import org.apache.catalina.User;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,5 +32,15 @@ public class UsersServiceImpl implements UsersService {
          responseStructure.setMessage("added Users Successfully");
          responseStructure.setStatusCode(HttpStatus.CREATED.value());
          return new ResponseEntity<>(responseStructure, HttpStatus.CREATED);
+    }
+
+    @Override
+    public ResponseEntity<ResponseStructure<Users>> getUsersById(int userId) {
+     Users user= usersDao.fetchById(userId);
+        ResponseStructure<Users> responseStructure = new ResponseStructure<Users>();
+        responseStructure.setData(user);
+        responseStructure.setStatusCode(HttpStatus.FOUND.value());
+        responseStructure.setMessage("fetched User Successfully");
+        return new ResponseEntity<>(responseStructure, HttpStatus.FOUND) ;
     }
 }
