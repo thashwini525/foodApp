@@ -13,8 +13,7 @@ public class Catagory {
     @SequenceGenerator(initialValue = 1,allocationSize = 100,name = "category_id")
     private int CategoryId;
     private String CategoryName;
-    @ManyToMany
-    @JoinColumn
+    @ManyToMany(mappedBy = "catagories")
     private List<Recipie> recipies;
 
 }
