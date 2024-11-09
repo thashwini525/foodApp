@@ -18,15 +18,18 @@ public class Recipie {
         private String steps;
 
         @ManyToOne
+        @JoinColumn
         private Users user;
 
         @OneToMany
+        @JoinColumn
         private List<Ingridient> ingridient;
 
         @OneToMany(mappedBy = "recipie")
         private List<Rating> ratings;
 
-        @ManyToMany(mappedBy = "recipies")
+        @ManyToMany
+        @JoinTable(joinColumns= @JoinColumn,inverseJoinColumns = @JoinColumn)
         private List<Catagory> catagories;
     }
 

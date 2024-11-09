@@ -15,6 +15,6 @@ public class Users {
     private String email;
     private String place;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
    private List<Recipie> recipie;
 }
